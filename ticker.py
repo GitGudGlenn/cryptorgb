@@ -5,7 +5,7 @@ import os
 import time
 from dotenv import load_dotenv
 
-load_dotenv()
+load_dotenv('/settings.env')
 
 from frame import Frame
 from rgbmatrix import graphics
@@ -35,7 +35,7 @@ class Ticker(Frame):
 
     def get_symbols(self):
         """Get the symbols to include"""
-        symbols = os.getenv('SYMBOLS', 'btc,eth')
+        symbols = os.environ.get('SYMBOLS', 'btc,eth')
         if not symbols:
             return 'btc,eth'
         return symbols
