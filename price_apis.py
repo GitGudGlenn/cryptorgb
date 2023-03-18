@@ -177,8 +177,7 @@ class CoinGecko(PriceAPI):
 
         for coin_id, data in response.json().items():
             try:
-                print(data[cur])
-                if price < 1 :
+                if data[cur] < 1 :
                     price = f"{cur_symbol}{data[cur]:,.4f}"
                 else:
                     price = f"{cur_symbol}{data[cur]:,.2f}"
