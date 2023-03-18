@@ -179,8 +179,10 @@ class CoinGecko(PriceAPI):
             try:
                 if data[cur] < 1 :
                     price = f"{cur_symbol}{data[cur]:,.4f}"
-                else:
+                elif data[cur] < 100 :
                     price = f"{cur_symbol}{data[cur]:,.2f}"
+                else:
+                    price = f"{cur_symbol}{data[cur]:,.0f}"
                 change_24h = f"{data[cur_change]:.1f}%"
             except (KeyError, TypeError):
                 logging.warn(f'api data not complete for {0}: {1}', coin_id, data)
