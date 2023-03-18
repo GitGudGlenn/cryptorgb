@@ -91,13 +91,13 @@ class Ticker(Frame):
         font_price.LoadFont('fonts/6x12.bdf')
 
         font_change = graphics.Font()
-        font_change.LoadFont('fonts/5x8.bdf')
+        font_change.LoadFont('fonts/6x10.bdf')
 
         # To right align, we have to calculate the width of the text
         change_width = sum(
             [font_change.CharacterWidth(ord(c)) for c in asset['change_24h']]
         )
-        change_x = 65 - change_width
+        change_x = 64 - change_width
 
         # Get colors
         main_color = graphics.Color(255, 255, 0)
@@ -113,8 +113,8 @@ class Ticker(Frame):
             
 
         # Draw the elements on the canvas
-        graphics.DrawText(canvas, font_symbol, 3, 12, main_color, asset['symbol'])
-        graphics.DrawText(canvas, font_price, 3, 28, main_color, asset['price'])
+        graphics.DrawText(canvas, font_symbol, 2, 12, main_color, asset['symbol'])
+        graphics.DrawText(canvas, font_price, 2, 28, main_color, asset['price'])
         graphics.DrawText(
             canvas, font_change, change_x, 10, change_color, asset['change_24h']
         )
