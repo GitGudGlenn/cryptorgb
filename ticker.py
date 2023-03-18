@@ -35,7 +35,7 @@ class Ticker(Frame):
 
     def get_symbols(self):
         """Get the symbols to include"""
-        symbols = os.environ.get('SYMBOLS', 'req,bog')
+        symbols = os.environ.get('SYMBOLS', 'btc,req,bog')
         if not symbols:
             return 'btc,eth'
         return symbols
