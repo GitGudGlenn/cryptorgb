@@ -100,7 +100,7 @@ class Ticker(Frame):
         change_x = 64 - change_width
 
         # Get colors
-        symbol_color = graphics.Color(178, 102, 255)
+        symbol_color = graphics.Color(153, 51, 255)
         price_color = graphics.Color(255, 255, 255)
         change_color = (
             graphics.Color(194, 24, 7)
