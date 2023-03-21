@@ -3,9 +3,6 @@
 import itertools
 import os
 import time
-from dotenv import load_dotenv
-
-load_dotenv('/settings.env')
 
 from frame import Frame
 from rgbmatrix import graphics
